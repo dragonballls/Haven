@@ -5,7 +5,10 @@ plugins {
 
 group = project.maven_group
 version = project.mod_version
-archivesBaseName = project.archives_base_name
+
+base {
+    archivesName = project.archives_base_name
+}
 
 repositories {
     maven { url = "https://maven.enjarai.dev/releases" }
