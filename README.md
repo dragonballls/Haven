@@ -1,9 +1,11 @@
-# Rolling Down in the Deep — Fabric 26.2 Port
+# Rolling Down in the Deep — Fabric 26.2
 
-Work-in-progress compatibility fork of [enjarai/rolling-down-in-the-deep](https://github.com/enjarai/rolling-down-in-the-deep).
+Unofficial Fabric 26.2 port of Rolling Down in the Deep.
 
-Original project: © enjarai and contributors. This fork retains the upstream MIT license and attribution.
+Upstream: https://github.com/enjarai/rolling-down-in-the-deep
 
-Target: Minecraft 26.2 on Fabric.
+Target: Minecraft 26.2 / Fabric Loader 0.19.3 / Fabric API 0.157.0+26.2.
 
-Status: source import and porting in progress; not yet verified as a successful build.
+Minecraft 26.1+ is unobfuscated, so this port uses the 26.2 Mojang-mapped source names and does not depend on Yarn mappings.
+
+This port is being rebuilt around the 26.2 APIs rather than pretending the 1.21 binary is compatible.
