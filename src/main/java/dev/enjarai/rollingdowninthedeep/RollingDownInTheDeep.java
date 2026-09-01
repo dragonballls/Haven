@@ -2,7 +2,6 @@ package dev.enjarai.rollingdowninthedeep;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
-import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.resources.Identifier;
@@ -18,7 +17,6 @@ public final class RollingDownInTheDeep implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         SwimConfig.INSTANCE.load();
-        KeyBindingHelper.registerKeyMapping(SwimKeybindings.TOGGLE_ENABLED);
         ClientTickEvents.END_CLIENT_TICK.register(SwimKeybindings::tick);
 
         SWIM_GROUP.trueIf(RollingDownInTheDeep::shouldRoll);
