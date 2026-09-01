@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "rolling_down_in_the_deep",
+  "version": "${version}",
+  "name": "Rolling Down in the Deep",
+  "description": "An addon to Do A Barrel Roll that extends its flight-style movement to swimming and diving.",
+  "authors": ["enjarai", "26.2 port"],
+  "contact": {"sources": "https://github.com/enjarai/rolling-down-in-the-deep"},
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {"client": ["dev.enjarai.rollingdowninthedeep.RollingDownInTheDeep"]},
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "minecraft": "~26.2",
+    "java": ">=25",
+    "fabric-api": "*",
+    "do_a_barrel_roll": ">=3.8.4"
+  }
+}
