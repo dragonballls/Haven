@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '1.17-SNAPSHOT'
+    id 'net.fabricmc.fabric-loom' version "${loom_version}"
     id 'maven-publish'
 }
 
@@ -8,18 +8,21 @@ version = project.mod_version
 archivesBaseName = project.archives_base_name
 
 repositories {
+    maven { url = "https://maven.enjarai.dev/releases" }
+    maven { url = "https://maven.enjarai.dev/mirrors" }
     mavenCentral()
 }
 
 dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+    implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+    implementation "nl.enjarai:do-a-barrel-roll:${project.do_a_barrel_roll_version}"
 }
 
 processResources {
     inputs.property "version", project.version
-    filesMatching("fabric.mod.json") { expand "version": project.version }
+    filesMatching("fabric.mod.json") { expand "version", project.version }
 }
 
 tasks.withType(JavaCompile).configureEach {
@@ -32,5 +35,5 @@ java {
 }
 
 jar {
-    from("LICENSE") { rename { "${it}_${project.archivesBaseName}" } }
+    from("LICENSE") { rename { "${it}_${project.archives_base_name}" } }
 }
